@@ -44,6 +44,10 @@
             <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter LastName:"/>
         </div>
         <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email:"/>
+        </div>
+        <div class="form-group">
             <label for="password">Password:</label>
             <input type="text" class="form-control" id="password" name="password" placeholder="Enter PassWord:"/>
         </div>

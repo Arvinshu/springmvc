@@ -22,6 +22,8 @@ public class MainController {
     @Autowired
     UserRepository userRepository;
 
+    //@Controller注解可明确地定义该类为处理请求的Controller类
+    //如果请求首页，则返回index页面，页面文件格式在dispatcher中定义
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
         return "index";
@@ -115,6 +117,7 @@ public class MainController {
     // 删除用户
     @RequestMapping(value = "/admin/users/returnU", method = RequestMethod.GET)
     public String returnUser() {
+        // 重定向到用户管理页面，方法为 redirect:url
         return "redirect:/admin/users";
     }
 }

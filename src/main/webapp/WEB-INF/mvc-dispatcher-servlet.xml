@@ -31,7 +31,7 @@
     <!-- 表示JPA Repository所在的包 -->
     <jpa:repositories base-package="com.arvin.repository"/>
 
-    <!-- 链接到persistence.xml -->
+    <!-- 链接到persistence.xml，该 xml文件为数据库连接 -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="defaultPersistenceUnit"/>
     </bean>

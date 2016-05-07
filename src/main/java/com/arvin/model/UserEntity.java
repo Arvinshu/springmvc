@@ -14,6 +14,7 @@ public class UserEntity {
     private String password;
     private String firstName;
     private String lastName;
+    private String email;
     private Collection<BlogEntity> blogsById;
 
     @Id
@@ -66,6 +67,16 @@ public class UserEntity {
         this.lastName = lastName;
     }
 
+    @Basic
+    @Column(name = "email", nullable = true, length = 45)
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,6 +89,7 @@ public class UserEntity {
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
         if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
         if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
 
         return true;
     }
@@ -89,6 +101,7 @@ public class UserEntity {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 

@@ -48,6 +48,11 @@
                    value="${user.lastName}"/>
         </div>
         <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email:"
+                   value="${user.email}"/>
+        </div>
+        <div class="form-group">
             <label for="password">Password:</label>
             <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password:"
                    value="${user.password}"/>

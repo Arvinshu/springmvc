@@ -47,7 +47,7 @@
                 <th style="text-align: center">ID</th>
                 <th style="text-align: center">昵称</th>
                 <th style="text-align: center">姓名</th>
-                <th style="text-align: center">密码</th>
+                <th style="text-align: center">邮箱</th>
                 <th style="text-align: center">操作</th>
             </tr>
 
@@ -56,7 +56,7 @@
                     <td>${user.id}</td>
                     <td>${user.nickname}</td>
                     <td>${user.firstName} ${user.lastName}</td>
-                    <td>${user.password}</td>
+                    <td>${user.email}</td>
                     <td style="text-align: center">
                         <a href="/admin/users/show/${user.id}" type="button" class="btn btn-sm btn-success">详情</a>
                         <a href="/admin/users/update/${user.id}" type="button" class="btn btn-sm btn-warning">修改</a>

@@ -6,6 +6,7 @@
 
   <display-name>SpringMVCDemo Web Application</display-name>
 
+  <!--创建一个servlet，名称为mvc-dispatcher,用于拦截所有请求，具体定义在mvc-dispatcher-servlet.xml文件中-->
   <servlet>
     <servlet-name>mvc-dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

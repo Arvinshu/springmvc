@@ -48,6 +48,10 @@
             <td>${user.lastName}</td>
         </tr>
         <tr>
+            <th>email</th>
+            <td>${user.email}</td>
+        </tr>
+        <tr>
             <th>Password</th>
             <td>${user.password}</td>
         </tr>
