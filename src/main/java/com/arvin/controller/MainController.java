@@ -26,7 +26,7 @@ public class MainController {
     //如果请求首页，则返回index页面，页面文件格式在dispatcher中定义
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        return "index";
+        return "main";
     }
 
     @RequestMapping(value = "/admin/users", method = RequestMethod.GET)
@@ -47,14 +47,16 @@ public class MainController {
         return "admin/addUser";
     }
 
-    // post请求，处理添加用户请求，并重定向到用户管理页面
+    // post请求，处理添加用户请求、收集数据并存库，然后重定向到用户管理页面
     @RequestMapping(value = "/admin/users/addP", method = RequestMethod.POST)
+    //@ModelAttribute注解用于收集post过来的数据（在此，相当于post过来了一整个userEntity，不用一个一个地取）
     public String addUserPost(@ModelAttribute("user") UserEntity userEntity) {
         // 注意此处，post请求传递过来的是一个UserEntity对象，里面包含了该用户的信息
         // 通过@ModelAttribute()注解可以获取传递过来的'user'，并创建这个对象
 
         // 数据库中添加一个用户，该步暂时不会刷新缓存
         //userRepository.save(userEntity);
+
         System.out.println(userEntity.getFirstName());
         System.out.println(userEntity.getLastName());
 
@@ -96,8 +98,8 @@ public class MainController {
     public String updateUserPost(@ModelAttribute("userP") UserEntity user) {
 
         // 更新用户信息
-        userRepository.updateUser(user.getNickname(), user.getFirstName(),
-                user.getLastName(), user.getPassword(), user.getId());
+        userRepository .updateUser(user.getNickname(), user.getFirstName(),
+                user.getLastName(), user.getEmail(), user.getPassword(), user.getId());
         userRepository.flush(); // 刷新缓冲区
         return "redirect:/admin/users";
     }

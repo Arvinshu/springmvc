@@ -28,6 +28,7 @@
 </head>
 <body>
 <div class="container">
+    <!--用户管理为超链接，点击后返回 / ，该返回将会被捕获和处理-->
     <h1><a href="/">SpringMVC</a>-用户管理</h1>
     <hr/>
 
