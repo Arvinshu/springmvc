@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `blog`;
 CREATE TABLE `blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
-  `content` varchar(255) DEFAULT NULL,
+  `content` varchar(5000) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   `pub_date` date NOT NULL,
   PRIMARY KEY (`id`),

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - springmvc@localhost" uuid="896975c8-94e4-4c6c-b802-d31f33eb76fb">
+  <data-source name="defaultPersistenceUnit/Hibernate" uuid="1c4d3237-e8ac-4d6f-a883-821250a7b1c0">
     <database-info product="MySQL" version="5.7.12-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -20,7 +20,7 @@
         <data-type>varchar(100)</data-type>
       </column>
       <column id="6" parent="2" name="content">
-        <data-type>varchar(255)</data-type>
+        <data-type>varchar(5000)</data-type>
       </column>
       <column id="7" parent="2" name="user_id">
         <mandatory>1</mandatory>
@@ -63,7 +63,10 @@
       <column id="16" parent="3" name="last_name">
         <data-type>varchar(45)</data-type>
       </column>
-      <key id="17" parent="3" name="PRIMARY">
+      <column id="17" parent="3" name="email">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="18" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

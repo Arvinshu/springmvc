@@ -51,8 +51,7 @@
     </appender>
 
     <!-- [组件日志APPENDER] -->
-    <appender name="COMPONENT-APPENDER"
-              class="org.apache.log4j.DailyRollingFileAppender">
+    <appender name="COMPONENT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="File" value="${webapp.root}/logs/logistics-component.log" />
         <param name="Append" value="true" />
         <param name="encoding" value="utf-8" />

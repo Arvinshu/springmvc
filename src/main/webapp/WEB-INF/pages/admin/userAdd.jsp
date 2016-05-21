@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Arvin
-  Date: 2016/5/7
-  Time: 10:07
+  Date: 2016/5/11
+  Time: 22:03
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,6 +16,31 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>SpringMVC 添加用户</title>
 
+    <script type="text/javascript">
+        function beforeSubmit(form){
+            if(form.nickname.value==''){
+                alert('Nick Name is null ！');
+                form.nickname.focus();
+                return false;
+            }
+            if(form.firstName.value == ''){
+                alert('First Name is null ！');
+                form.firstName.focus();
+                return false;
+            }
+            if(form.lastName.value == ''){
+                alert('Last Name is null ！');
+                form.lastName.focus();
+                return false;
+            }
+            if(form.email.value == '') {
+                alert('Email is null ！');
+                form.email.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -30,7 +55,7 @@
 <div class="container">
     <h1>SpringMVC 添加用户</h1>
     <hr/>
-    <form:form action="/admin/users/addP" method="post" commandName="user" role="form">
+    <form:form name="form" action="/admin/users/addP" method="post" commandName="user" role="form" onSubmit="return beforeSubmit(this);">
         <div class="form-group">
             <label for="nickName">Nick Name:</label>
             <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Enter NickName:"/>
@@ -51,7 +76,7 @@
             <label for="password">Password:</label>
             <input type="text" class="form-control" id="password" name="password" placeholder="Enter PassWord:"/>
         </div>
-        <div class="form-group">
+        <div style="text-align: right" class="form-group">
             <button type="submit" class="btn btn-sm btn-success">提交</button>
         </div>
     </form:form>

@@ -38,7 +38,7 @@
                 </prop>
             </props>
         </property>
-        <property name="defaultErrorView" value="error"/>
+        <property name="defaultErrorView" value="admin/error"/>
     </bean>
 
     <!-- 表示JPA Repository所在的包 -->
@@ -56,4 +56,13 @@
 
     <!-- 开启事务管理注解 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="cacheSeconds" value="0" />
+        <property name="webBindingInitializer">
+            <bean class="WebBinding" />
+        </property>
+    </bean>
+    -->
 </beans>

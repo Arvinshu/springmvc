@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Arvin
-  Date: 2016/5/7
-  Time: 11:30
+  Date: 2016/5/11
+  Time: 20:58
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -16,6 +16,31 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>SpringMVC Demo 更新用户</title>
 
+    <script type="text/javascript">
+        function beforeSubmit(form){
+            if(form.nickname.value==''){
+                alert('Nick Name is null ！');
+                form.nickname.focus();
+                return false;
+            }
+            if(form.firstName.value == ''){
+                alert('First Name is null ！');
+                form.firstName.focus();
+                return false;
+            }
+            if(form.lastName.value == ''){
+                alert('Last Name is null ！');
+                form.lastName.focus();
+                return false;
+            }
+            if(form.email.value == '') {
+                alert('Email is null ！');
+                form.email.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -31,7 +56,7 @@
     <h1>SpringMVC 更新用户信息</h1>
     <hr/>
 
-    <form:form action="/admin/users/updateP" method="post" commandName="userP" role="form">
+    <form:form action="/admin/users/updateP" method="post" commandName="userP" role="form" name="form" onSubmit="return beforeSubmit(this);">
         <div class="form-group">
             <label for="firstName">Nickname:</label>
             <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Enter Nickname:"
@@ -60,7 +85,7 @@
         <!-- 把 id 一并写入 userP 中 -->
         <input type="hidden" id="id" name="id" value="${user.id}"/>
 
-        <div class="form-group">
+        <div style="text-align: right" class="form-group">
             <button type="submit" class="btn btn-sm btn-success">提交</button>
         </div>
     </form:form>

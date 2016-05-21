@@ -2,6 +2,7 @@ package com.arvin.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * Created by Arvin on 2016/5/7.
@@ -12,6 +13,8 @@ public class BlogEntity {
     private int id;
     private String title;
     private String content;
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date pubDate;
     private UserEntity userByUserId;
 

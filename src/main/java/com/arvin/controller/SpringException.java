@@ -3,7 +3,7 @@ package com.arvin.controller;
 /**
  * Created by Arvin on 2016/5/10.
  */
-//处理添加用户时出现的
+//处理添加用户时出现字段为空的错误
 public class SpringException extends RuntimeException {
     private String exceptionMsg;
 

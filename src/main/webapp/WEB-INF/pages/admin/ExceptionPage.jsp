@@ -35,9 +35,8 @@
         <strong>Warning-</strong>${exception.exceptionMsg}.
     </div>
 
-    <!-- 如果用户列表为空 -->
     <div style="text-align: center">
-        <a href="/admin/users/add" type="button" class="btn btn-primary btn-sm">返回添加</a>
+        <a href="/admin/users/returnadd" type="button" class="btn btn-primary btn-sm">返回</a>
     </div>
 </div>
 
